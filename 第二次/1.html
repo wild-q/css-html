@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-width: 903px;
+
+            background-color: black;
+        }
+
+        .container {
+            border: 1px #fefefe solid;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 900px;
+            margin: 80px auto;
+        }
+
+        .left {
+            overflow: hidden;
+            min-width: 160px;
+            background-color: rgb(30, 41, 51);
+            height: 100%;
+            color: #fefefe;
+        }
+
+        .center {
+            min-width: 400px;
+            background-color: red;
+            height: 100%;
+        }
+
+        .right {
+            min-width: 400px;
+            flex: 1;
+            background-color: #f8fafd;
+            height: 100%;
+        }
+
+        .logo {
+            height: 60px;
+            border-bottom: 1px #323e4a solid;
+            min-width: 165px;
+            padding: 10px;
+        }
+
+        .name {
+            height: 75px;
+            min-width: 165px;
+            border-bottom: 1px #323e4a solid;
+        }
+
+        .name span {
+            display: inline-block;
+        }
+
+        .name img {
+            border-radius: 50%;
+            margin: auto 20px;
+            width: 40px;
+            height: 40px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        span {
+            font-size: 16px;
+            display: inline-block;
+            height: 45px;
+            line-height: 16px;
+        }
+
+        li {
+            border-radius: 23%;
+            margin: 7px;
+            display: block;
+            height: 40px;
+            margin-left: 15px;
+        }
+
+        li img {
+
+            margin-top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: #fefefe;
+
+        }
+
+        li span {
+            margin-left: 10px;
+            display: inline-block;
+            line-height: 40px;
+        }
+
+        li:hover {
+
+            background-color: skyblue;
+        }
+
+        .search {
+            height: 60px;
+            background-color: #ffffff;
+            padding-top: 20px;
+            padding-left: 30px;
+        }
+
+        .cenbox2 {
+            color: #323e4a;
+            font-weight: 700;
+            height: 20px;
+            background-color: #ffffff;
+            border-bottom: 1px #323e4a solid;
+            line-height: 20px;
+            padding: 0 20px 10px 20px;
+        }
+
+        .user {
+            float: left;
+        }
+
+        .news {
+            padding: 3px 20px;
+            float: right;
+            background-color: #ebedfb;
+        }
+
+        .cheatbox {
+            height: 97.5px;
+            background-color: #ffffff;
+            border-bottom: 1px white solid;
+        }
+
+        .cheatbox img {
+            border-radius: 50%;
+
+            width: 40px;
+            height: 40px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .hdphoto {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .box1 {
+            position: relative;
+            z-index: 3;
+            left: 15px;
+            top: -7px;
+        }
+
+        .box2 {
+            position: relative;
+            z-index: 5;
+            left: -3px;
+            top: 18px;
+        }
+
+        .cheatbox1 {
+            margin: 15px 0 0 10px;
+            font-weight: bold;
+            color: #323e4a;
+            font-size: 16px;
+            width: 230px;
+        }
+
+        .cheatbox2 {
+            margin: 10px 0 0 10px;
+            color: #7f8a94;
+            font-size: 14px;
+            width: 230px;
+        }
+
+        .sel {
+            padding: 0 20px;
+            height: 60px;
+            background-color: #ffffff;
+        }
+
+        option {
+            background-color: crimson;
+            padding: 0 20px;
+        }
+
+        .talk {
+            background-color: #f8fafd;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .talk div {
+            padding: 5px 15px 5px 15px;
+            width: 80%;
+        }
+
+        .talkbox2 {
+            align-self: flex-end;
+        }
+
+        .talkbox4 {
+            align-self: flex-end;
+        }
+
+        .talk img {
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            margin: 0 10px;
+        }
+
+        .talk .talkname {
+            background-color: #f8fafd;
+        }
+
+        .talkbox {
+            min-width: 550px;
+            margin: 10px 10px 0 10px;
+            background-color: #5965db;
+            border-radius: 10px 15px 15px 10px;
+        }
+
+        .inp {
+            clear: both;
+            width: 100%;
+            height: 100%;
+            border: 1px #fefefe solid;
+            display: fixed;
+            justify-self: flex-end;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="logo"><img src="result.png" alt="baidu"></div>
+            <div class="name"><img src="钢铁侠.png"><span>钢铁侠<br>superman</span></div>
+            <div class="menu">
+                <ul>
+                    <li style="font-size: 9px;display: block;line-height: 40px;">菜单
+                    </li>
+                    <li><img src="img/yibiaopan.png"><span>仪表盘</span></li>
+                    <li><img src="img/yonghuliebiao.png"><span>用户列表</span></li>
+                    <li><img src="img/wenjian.png"><span>文件</span></li>
+                    <li style="background-color: rgb(89, 101, 219);"><img src="img/liaotian.png"><span>聊天</span></li>
+                    <li><img src="img/xiangmu.png"><span>项目</span></li>
+                    <li><img src="img/ziyuan.png"><span>日程表</span></li>
+                    <li><img src="img/zhifufangshi.png"><span>支付方式</span></li>
+                </ul>
+            </div>
+            <div class="help">
+                <ul>
+                    <li style="font-size: 9px;display: block;line-height: 40px;">帮助
+                    </li>
+                    <li><img src="img/wenti.png"><span>需要帮助？</span></li>
+                    <li><img src="img/youjian.png" alt=""><span>联系我们</span></li>
+
+                </ul>
+            </div>
+            <div class="setting" style=" border-bottom: 1px #323e4a solid; ;">
+                <ul>
+                    <li style="font-size: 9px;display: block;line-height: 40px;">设置
+                    </li>
+                    <li><img src="img/shezhi.png"><span>账号设置</span></li>
+                    <li><img src="img/dark.png"><span>深色模式</span></li>
+                    <li><img src="img/tuichu.png"><span>退出</span></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="center">
+            <div class="search"><img src="img/搜索.png" width="20px " height="20px">
+                <input type="text" placeholder="请输入关键字" style="height: 25px;">
+            </div>
+            <div class="cenbox2">
+                <div class="user">用户列表</div>
+                <div class="news">新消息</div>
+            </div>
+            <div class="cheatbox" style="position: relative;">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="钢铁侠.png">
+                    <img class="box2" src="美国队长.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">名称示例</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox" style="background-color: #f6f9ff;">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="美国队长.png">
+                    <img class="box2" src="黑豹.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">名称示例</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="格鲁特.png">
+                    <img class="box2" src="洛基.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">新项目</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="钢铁侠.png">
+                    <img class="box2" src="浣熊.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">进度更新</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="死侍.png">
+                    <img class="box2" src="鹰眼.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">工作期望</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="幻视.png">
+                    <img class="box2" src="浣熊.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">第一个项目</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="钢铁侠.png">
+                    <img class="box2" src="美国队长.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">新工作机会</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+            <div class="cheatbox">
+                <div class="hdphoto" style="height:97.5px;float: left;">
+                    <img class="box1" src="钢铁侠.png">
+                    <img class="box2" src="浣熊.png">
+                </div>
+                <div style="float: left; ">
+                    <div class="cheatbox1">恭喜啦</div>
+                    <div class="cheatbox2">你现在应该可以试着访问所有文档，您应该现状试试看...
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right">
+            <div class="sel">
+
+                <select style="float: right;height: 30px;margin:15px 30px 0 10px;padding:0 10px;font-size: 19px;">
+                    <option value="china">Chinese</option>
+                    <option value="china">English</option>
+                    <option value="china">Japanese</option>
+                    <option value="china">china</option>
+                </select>
+                <img src="国旗.png" width="50px" height="33px" style="float: right;">
+            </div>
+            <div style="height: 51px;line-height: 51px;background-color: white;">
+                <div style="font-weight: bold;font-size: 20px;margin-left: 30px;"> 新团队成员</div>
+            </div>
+            <div class="talk">
+                <div class="talkbox1">
+                    <div class="talkname"> <img src="美国队长.png">名字示例</div>
+                    <div class="talkbox">嗨！王小样！我们真的非常欢迎你加入我们的团队</div>
+                </div>
+                <div class="talkbox2 talkbox">谢谢您，我很高兴加入这个出色的设计个出色的设计团队！非常感谢能有机会开发一些会影响人们生活的产品。我等不及要开始了！</div>
+                <div class="talkbox3">
+                    <div class="talkname"> <img src="美国队长.png">名字示例</div>
+                    <div class="talkbox">
+                        我们很高兴认识您，我们很喜欢您在面试中向我们展示的工作，并且您非常适合，我们的团队和公司的每一个人都很高兴认识您，如果您有任何疑问，请随时咨询，我们都和乐意为您提供帮助</div>
+                    <div class="talkbox">
+                        我们很高兴认识您，我们很喜欢您在面试中向我们展示的工作，并且您非常适合，我们的团队和公司的每一个人都很高兴认识您，如果您有任何疑问，请随时咨询，我们都和乐意为您提供帮助</div>
+                </div>
+                <div class="talkbox4 talkbox">谢谢您，我很高兴加入这个出色的设计个出色的设计团队！非常感谢能有机会开发一些会影响人们生活的产品。我等不及要开始了！</div>
+
+                <div class="talkbox5">
+                    <div class="talkname"> <img src="格鲁特.png">名字示例</div>
+                    <div class="talkbox">
+                        我们很高兴认识您，我们很喜欢您在面试中向我们展示的工作，并且您非常适合，我们的团队和公司的每一个人都很高兴认识您，如果您有任何疑问，请随时咨询，我们都和乐意为您提供帮助</div>
+                </div>
+                <div class="talkbox6">
+                    <div class="talkname"> <img src="洛基.png">名字示例</div>
+                    <div class="talkbox">嗨！王小样！我们真的非常欢迎你加入我们的团队</div>
+                </div>
+                <div class="inp">
+                    <input type="text" style="width: 80%;height: 50px; font-size: 19px;" placeholder="在这里输入内容...">
+                    <img src="图 片.png" alt=""><img src="链接.png" alt=""><img src="表情 .png" alt="">
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
