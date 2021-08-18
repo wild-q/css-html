@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 200px;
+            margin: 100px 0 0 35%;
+        }
+
+        li {
+            list-style: none;
+            height: 25px;
+            font-size: 12px;
+        }
+
+        button {
+            display: block;
+            margin-left: 36%;
+        }
+
+        .li1 {
+            color: green;
+        }
+
+        .li2 {
+            color: red;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <div style="text-align: center;">创建账户</div>
+        <div>
+            <p>用户名</p>
+            <input type="text" class="uname">
+            <li></li>
+        </div>
+        <div>
+            <p>密码</p>
+            <input type="password" class="mima">
+            <img class="eye1" src="eye-blocked.png." width="15px" height="15px">
+            <li></li>
+        </div>
+        <div>
+            <p>确认密码</p>
+            <input type="text" class="confmm">
+            <img class="eye2" src="eye-blocked.png." width="15px" height="15px">
+            <li></li>
+        </div>
+        <div>
+            <p>手机号码</p>
+            <input type="text" class="pnumb">
+            <li></li>
+        </div>
+        <button>提交</button>
+    </div>
+    <script>
+        var uname = document.querySelector('.uname');
+        var li = document.querySelectorAll('li');
+        uname.onblur = function () {
+            var usname = /^\w{4,16}$/
+            var flag = usname.test(uname.value);
+            if (flag) {
+                li[0].className = 'li1'
+                li[0].innerHTML = "用户名合法"
+            } else {
+                li[0].className = 'li2'
+                li[0].innerHTML = "用户名不合法"
+            }
+        }
+        var mima = document.querySelector('.mima');
+        mima.onblur = function () {
+            var mm = /^1[0-5]{2}[6-9]{3}\d[a-d]{2}$/
+            var flag = mm.test(mima.value)
+            if (flag) {
+                li[1].className = 'li1'
+                li[1].innerHTML = "密码合法"
+            } else {
+                li[1].className = 'li2'
+                li[1].innerHTML = "密码不合法"
+            }
+        }
+        var confmm = document.querySelector('.confmm');
+        confmm.onblur = function () {
+            var date1 = confmm.value
+            var date2 = mima.value
+            if (date1 == date2) {
+                li[2].className = 'li1'
+                li[2].innerHTML = "密码一致"
+            } else {
+                li[2].className = 'li2'
+                li[2].innerHTML = "前后密码不一致"
+            }
+
+        }
+        var eye1 = document.querySelector('.eye1');
+        var i1 = 0;
+        eye1.onclick = function () {
+            if (i1 == 0) {
+                mima.type = 'text';
+                eye1.src = 'eye.png';
+                i1 = 1;
+            } else {
+                mima.type = 'password';
+                eye1.src = 'eye-blocked.png';
+                i1 = 0;
+            }
+        }
+        var eye2 = document.querySelector('.eye2');
+        var i2 = 0;
+        eye2.onclick = function () {
+            if (i2 == 0) {
+                confmm.type = 'text';
+                eye2.src = 'eye.png';
+                i2 = 1;
+            } else {
+                confmm.type = 'password';
+                eye2.src = 'eye-blocked.png';
+                i2 = 0;
+            }
+        }
+        var pnumb = document.querySelector('.pnumb');
+        pnumb.onblur = function () {
+            var mpnumb = /^1[3-9]\d{9}$/;
+            var flag = mpnumb.test(pnumb.value);
+            if (flag) {
+                li[3].className = 'li1'
+                li[3].innerHTML = "手机号码合法"
+            } else {
+                li[3].className = 'li2'
+                li[3].innerHTML = "手机号码不合法"
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
